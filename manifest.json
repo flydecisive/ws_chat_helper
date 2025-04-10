@@ -1,0 +1,16 @@
+{
+    "name": "Помощник для чатов",
+    "description": "Проект Максима",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "images/test.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "images/test.png"
+        }
+    },
+    "permissions": ["activeTab", "scripting"],
+    "background":{}
+}
