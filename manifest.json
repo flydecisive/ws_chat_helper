@@ -1,17 +1,30 @@
 {
-  "name": "Помощник для чатов",
-  "description": "Проект Максима",
-  "version": "1.0",
   "manifest_version": 3,
+  "name": "WebSoft Chatbot Hider",
+  "version": "1.0",
+  "description": "Скрывает сообщения чат-бота на WebSoft",
   "icons": {
-    "16": "images/test.png"
+    "128": "images/test.png"
+  },
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["*://my.websoft.ru/*", "*://clients.websoft.ru/*"],
+  "background": {
+    "service_worker": "background.js"
   },
   "action": {
+    "default_popup": "popup/popup.html",
     "default_icon": {
-      "16": "images/test.png"
-    },
-    "default_popup": "popup.html"
+      "128": "images/test.png"
+    }
   },
-  "permissions": ["activeTab", "scripting"],
-  "background": {}
+  "content_scripts": [
+    {
+      "matches": [
+        "*://my.websoft.ru/vchat/conversation/*",
+        "*://clients.websoft.ru/vchat/conversation/*"
+      ],
+      "js": ["content-script.js"],
+      "run_at": "document_end"
+    }
+  ]
 }
