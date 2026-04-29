@@ -58,10 +58,7 @@ class ChatbotHider {
 
     setInterval(() => {
       const currentUrl = location.href;
-      if (
-        currentUrl !== lastUrl &&
-        currentUrl.includes("/vchat/conversation/")
-      ) {
+      if (currentUrl !== lastUrl && currentUrl.includes("/uc/conversation/")) {
         lastUrl = currentUrl;
         this.hideExistingElements();
       }

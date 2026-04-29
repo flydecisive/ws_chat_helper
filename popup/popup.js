@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     status.textContent = isEnabled ? "Включено" : "Выключено";
 
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      if (tabs[0] && tabs[0].url.includes("/vchat/conversation/")) {
+      if (tabs[0] && tabs[0].url.includes("/uc/conversation/")) {
         chrome.tabs.sendMessage(tabs[0].id, {
           action: "updateState",
           hideEnabled: isEnabled,
